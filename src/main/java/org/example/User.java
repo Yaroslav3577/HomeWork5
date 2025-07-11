@@ -1,6 +1,6 @@
 package org.example;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -9,10 +9,35 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(nullable = false)
     private String name;
 
-    // Геттеры и сеттеры
+    @Column
+    private String mail;
+
+    // Конструкторы, геттеры и сеттеры
+    public User() {
+    }
+
+    public User(String name) {
+        this.name = name;
+    }
+    public User(String name, Long id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public User(String name, Long id, String mail) {
+        this.name = name;
+        this.id = id;
+        this.mail = mail;
+    }
+
+    // Геттеры и сеттеры для всех полей
+    public String getMail(){return  mail;}
+
+    public void  setMail(String mail){this.mail = mail;}
+
     public Long getId() {
         return id;
     }
@@ -29,8 +54,4 @@ public class User {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "User [id=" + id + ", name=" + name +"]";
-    }
 }
