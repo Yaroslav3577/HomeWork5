@@ -19,7 +19,6 @@
 
         <!-- Update the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
-
         <!-- List of entity classes -->
         <mapping class="org.example.User"/>
     </session-factory>

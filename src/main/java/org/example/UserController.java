@@ -1,5 +1,6 @@
 package org.example;
 
+
 import org.example.notification.UserEvent;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
