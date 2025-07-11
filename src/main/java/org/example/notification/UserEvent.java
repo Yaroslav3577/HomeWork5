@@ -1,6 +1,5 @@
 package org.example.notification;
 
-
 public class UserEvent {
     private String email;
     private EventType eventType;

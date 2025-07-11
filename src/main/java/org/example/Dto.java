@@ -1,6 +1,5 @@
 package org.example;
 
-
 public class Dto {
 
     private Long id;
