@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-@SpringBootApplication
+//@SpringBootApplication
 public class Main {
     private static final String API_URL = "http://localhost:8080/api/users";
     private static Scanner scanner = new Scanner(System.in);
@@ -60,7 +60,6 @@ public class Main {
             System.out.println("Пользователь не найден");
         }
     }
-
     private static void updateUsers() {
         System.out.print("Введите ID пользователя для обновления: ");
         Long id = scanner.nextLong();

@@ -16,9 +16,9 @@ public class UserEventConsumer {
     @KafkaListener(topics = "${kafka.topic.user-events}", groupId = "notification-group")
     public void handleUserEvent(UserEvent userEvent) {
         if (userEvent.getEventType() == UserEvent.EventType.CREATED) {
-            emailService.sendAccountCreatedEmail(userEvent.getEmail());
+            emailService.sendAccountCreatedEmail(userEvent.getUser().getMail());
         } else if (userEvent.getEventType() == UserEvent.EventType.DELETED) {
-            emailService.sendAccountDeletedEmail(userEvent.getEmail());
+            emailService.sendAccountDeletedEmail(userEvent.getUser().getMail());
         }
     }
 }

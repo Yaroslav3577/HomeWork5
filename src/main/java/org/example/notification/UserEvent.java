@@ -1,32 +1,25 @@
 package org.example.notification;
 
+import org.example.User;
+
 public class UserEvent {
-    private String email;
+    private User user;
     private EventType eventType;
-    public UserEvent(String email, EventType eventType){
-        this.email = email;
+    public UserEvent(User user , EventType eventType){
+        this.user = user;
         this.eventType = eventType;
     }
 
-    public String toMessageString() {
-        return email + ":" + eventType.name();
-    }
-
-    public static UserEvent fromMessageString(String message) {
-        String[] parts = message.split(":");
-        return new UserEvent(parts[0], EventType.valueOf(parts[1]));
-    }
-
     public enum EventType {
-        CREATED, DELETED
+        CREATED, DELETED, UPDATED
     }
 
-    public String getEmail() {
-        return email;
+    public User getUser() {
+        return user;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public EventType getEventType() {
@@ -40,7 +33,7 @@ public class UserEvent {
     @Override
     public String toString() {
         return "UserEvent{" +
-                "email='" + email + '\'' +
+                "email='" + user.getMail() + '\'' +
                 ", eventType=" + eventType +
                 '}';
     }

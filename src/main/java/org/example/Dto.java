@@ -1,6 +1,8 @@
 package org.example;
 
-public class Dto {
+import org.springframework.hateoas.RepresentationModel;
+
+public class Dto extends RepresentationModel<Dto> {
 
     private Long id;
     private String name;

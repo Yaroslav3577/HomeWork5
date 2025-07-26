@@ -17,6 +17,6 @@ public class UserEventHandler {
                 ? "Здравствуйте! Ваш аккаунт на сайте ваш сайт был успешно создан."
                 : "Здравствуйте! Ваш аккаунт был удалён.";
 
-        emailService.sendEmail(event.getEmail(), subject, text);
+        emailService.sendEmail(event.getUser().getMail(), subject, text);
     }
 }
