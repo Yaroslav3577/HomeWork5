@@ -3,6 +3,7 @@ package org.example;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -12,6 +13,7 @@ import java.util.Scanner;
 
 
 //@SpringBootApplication
+//@EnableDiscoveryClient
 public class Main {
     private static final String API_URL = "http://localhost:8080/api/users";
     private static Scanner scanner = new Scanner(System.in);
