@@ -40,8 +40,8 @@ class UserControllerTest {
     @Test
     void getAllUsers_ShouldReturnUsers() throws Exception {
         // Подготовка данных
-        User user1 = new User("ТестMockMvc1",1L);
-        User user2 = new User( "ТестMockMvc2",2L);
+        User user1 = new User("ТестMockMvc1",1L,"аа@mail.ru");
+        User user2 = new User( "ТестMockMvc2",2L,"бб@gmail.com");
 
         when(userRepository.findAll()).thenReturn(Arrays.asList(user1, user2));
 
@@ -58,8 +58,8 @@ class UserControllerTest {
 
     @Test
     void createUser_ShouldReturnCreatedUser() throws Exception {
-        User newUser  = new User("ТестMockMvc2",null);
-        User savedUser  = new User( "ТестMockMvc3",1L);
+        User newUser  = new User("ТестMockMvc2",null,"аа@mail.ru");
+        User savedUser  = new User( "ТестMockMvc3",1L,"аа@mail.ru");
 
         when(userRepository.save(any(User.class))).thenReturn(savedUser);
 
@@ -76,8 +76,8 @@ class UserControllerTest {
     @Test
     void updateUser_ShouldReturnUpdatedUser() throws Exception {
         Long userId = 1L;
-        User existingUser = new User("Old Name", userId);
-        User updatedUser = new User("New Name", userId);
+        User existingUser = new User("Old Name", userId,"аа@mail.ru");
+        User updatedUser = new User("New Name", userId,"аа@mail.ru");
 
         when(userRepository.findById(userId)).thenReturn(Optional.of(existingUser));
         when(userRepository.save(any(User.class))).thenReturn(updatedUser);
