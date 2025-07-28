@@ -1,5 +1,6 @@
 package org.example.notification;
 
+import org.example.User;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
@@ -14,8 +15,9 @@ class UserEventHandlerUnitTest {
         EmailService emailService = Mockito.mock(EmailService.class);
 
         UserEventHandler handler = new UserEventHandler(emailService);
+        User user = new User("1",1L,"test@example.com");
 
-        UserEvent event = new UserEvent("test@example.com", UserEvent.EventType.CREATED);
+        UserEvent event = new UserEvent(user, UserEvent.EventType.CREATED);
 
         handler.handleUserEvent(event);
 

@@ -10,10 +10,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>ApiGateway</module>
-        <module>ConfigServer</module>
-        <module>DiscoveryServer</module>
-        <module>UserService</module>
+        <module>api-gateway</module>
+        <module>config-server</module>
+        <module>discovery-server</module>
+        <module>user-service</module>
     </modules>
 
 </project>
